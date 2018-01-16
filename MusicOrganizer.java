@@ -99,15 +99,27 @@ public class MusicOrganizer
      */
     public void listMaching(String searchString)
     {
-        boolean nombreNoCoincide = true;
+        boolean nombreNoCoincide = false;
         for(String filename : files){
             if(filename.contains(searchString)){
                 // Una coincidencia
                 System.out.println(filename);
-                nombreNoCoincide = false;
+                nombreNoCoincide = true;
             }
-            if(nombreNoCoincide==true){
+            if(nombreNoCoincide==false){
                 System.out.println("No hay nombres coincidentes");
+            }
+        }
+    }
+    
+    /**
+     * Reproduce los primeros segundos de las canciones de un artista
+     */
+    public void suenaCancionArtista(String artista)
+    {
+        for(String filename : files){
+            if(filename.contains(artista)){
+                player.playSample(filename);
             }
         }
     }
