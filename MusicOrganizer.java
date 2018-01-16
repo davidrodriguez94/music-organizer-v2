@@ -99,10 +99,15 @@ public class MusicOrganizer
      */
     public void listMaching(String searchString)
     {
+        boolean nombreNoCoincide = true;
         for(String filename : files){
             if(filename.contains(searchString)){
                 // Una coincidencia
                 System.out.println(filename);
+                nombreNoCoincide = false;
+            }
+            if(nombreNoCoincide==true){
+                System.out.println("No hay nombres coincidentes");
             }
         }
     }
