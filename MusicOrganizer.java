@@ -93,4 +93,17 @@ public class MusicOrganizer
             System.out.println(position + ": " + filename);
         }
     }
+    
+    /**
+     * Muestra canciones que coinciden con la cadena a buscar
+     */
+    public void listMaching(String searchString)
+    {
+        for(String filename : files){
+            if(filename.contains(searchString)){
+                // Una coincidencia
+                System.out.println(filename);
+            }
+        }
+    }
 }
